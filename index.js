@@ -8,12 +8,17 @@ const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
 
 const bodyParser=require('body-parser');
+// to read cookies
+const cookieParser=require('cookie-parser');
+
 
 const db=require('./config/mongoose');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.json());
+// to read cookies
+app.use(cookieParser());
 
 app.use(express.static('./assets'));
 
