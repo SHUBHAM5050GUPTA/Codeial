@@ -2,3 +2,15 @@
 <link rel="stylesheet" href="/css/profile.css">
 
 <h1>Profile page is up with title <%= title %></h1>
+<h3>UserName: <%= user.name %></h3>
+<h3>UserEmail: <%= user.email %></h3>
+
+<ul>
+    <% if(locals.user){ %>
+        <li> <a href="/users/sign-out"> Sign Out </a></li>
+    <% }else{ %>
+        <li> <a href="/users/sign-in">Sign In </a></li>
+        <li> <a href="/users/sign-up">Sign Up </a></li>
+    <% } %>
+    
+</ul>

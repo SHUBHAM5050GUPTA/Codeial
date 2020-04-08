@@ -2,15 +2,15 @@
 
 
 <div>
-    <form>
+    <form action="/users/create-session" method="POST" >
         <div class="form-group">
             <label for="email_id">Email Id</label>
-            <input type="email" placeholder="Email address"  class="form-control" id="email_id" aria-describedby="email_des">
+            <input type="email" placeholder="Email address"  class="form-control" id="email_id"  name="email"aria-describedby="email_des">
             <small id="email_des" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" placeholder="Password" class="form-control" id="password">
+            <input type="password" placeholder="Password" class="form-control" id="password" name="password">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
