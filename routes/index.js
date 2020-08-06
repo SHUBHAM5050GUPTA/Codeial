@@ -10,5 +10,6 @@ router.get('/',homeController.home);
 
 //directing towards user folder. so used middleware aftrewards.
 router.use('/users',require('./user'));
+router.use('/posts',require('./post'));
 
 module.exports=router;

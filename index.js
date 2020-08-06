@@ -23,6 +23,18 @@ const passport=require('passport')
 const passportLocal=require('./config/passport-local-strategy');
 const MongoStore= require('connect-mongo')(session);
 
+//for node-saas-middleware
+const sassMidleware = require('node-sass-middleware');
+
+app.use(sassMidleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: true,
+    outputStyle: 'exteded',
+    prefix: '/css'
+
+}));
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -53,7 +65,7 @@ app.use(session({
     cookie: {
         maxAge: (1000 * 60 * 100)
     },
-    // mongoStrore is used to store sessio in mongodb
+    // mongoStrore is used to store session in mongodb
     store: new MongoStore({
         mongooseConnection: db,
         autoRemove: 'disabled'
